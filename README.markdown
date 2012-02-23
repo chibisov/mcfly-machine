@@ -17,6 +17,10 @@ For single component you can use singular form:
     # => datetime.datetime(2012, 2, 24, 22, 11, 40, 283787)
     m(1).hour.ago()
 
+Not only ints:
+
+    m(1.5).hours.ago()
+
 You can chain date components with 'and_' method:
 
     m(9).days.and_(8).hours.ago()

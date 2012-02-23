@@ -53,7 +53,12 @@ class TestMcflyMachineBehavior(DatesAssertsMixin, TestCase):
                 'machine':  lambda: m(9).days.and_(8).hours.and_(7).seconds.later(),
                 'expected': lambda: now() + timedelta(days=9, hours=8, seconds=7),
                 'msg':      'calculation with long chain is wrong'
-            }          
+            },
+            {
+                'machine':  lambda: m(1.5).days.ago(from_=from_),
+                'expected': lambda: from_ - timedelta(days=1.5),
+                'msg':      'float delta works wrong'
+            }            
         ]
         
         for exp in experiments:
