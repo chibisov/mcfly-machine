@@ -1,6 +1,6 @@
-# Marty McFly machine for python
+![McFly machine](http://github.com/chibisov/mcfly-machine/raw/master/machine.png "McFly machine")
 
-![McFly machine](http://chibisov.github.com/mcfly-machine/machine.png "McFly machine")
+#### Marty McFly machine for python
 
     from mcfly_machine import Machine
     from datetime import datetime
