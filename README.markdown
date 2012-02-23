@@ -2,7 +2,7 @@
 
 #### Marty McFly machine for python
 
-    from mcfly_machine import Machine
+    from mcfly_machine import Machine as m
     from datetime import datetime
 
     print datetime.now()
