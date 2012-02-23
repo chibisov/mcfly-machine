@@ -1,0 +1,32 @@
+# Marty McFly machine for python
+
+![McFly machine](http://chibisov.github.com/mcfly-machine/machine.png "McFly machine")
+
+    from mcfly_machine import Machine
+    from datetime import datetime
+
+    print datetime.now()
+    # => datetime.datetime(2012, 2, 23, 22, 11, 40, 283787)
+
+    print m(5).days.ago()
+    # => datetime.datetime(2012, 2, 18, 22, 11, 40, 283787)
+
+For single component you can use singular form:
+
+    print m(1).day.later()
+    # => datetime.datetime(2012, 2, 24, 22, 11, 40, 283787)
+    m(1).hour.ago()
+
+You can chain date components with 'and_' method:
+
+    m(9).days.and_(8).hours.ago()
+    m(9).days.and_(8).hours.and_(1).second.and_(10).microseconds.later()
+
+By default timedelta calculates from datetime.now(). You can change it:
+
+    m(9).days.ago(from_=datetime(1990, 2, 3))
+
+Force to use datetime.utcnow():
+
+    m(9).days.ago(in_utc=True)
+
